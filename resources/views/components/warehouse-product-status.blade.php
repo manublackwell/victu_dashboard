@@ -1,0 +1,1 @@
+<div class='badge {{ $badge_type }}'>{{ \App\Models\Warehouse::status_string($status) }}</div>

@@ -1,0 +1,14 @@
+#orders-table_filter{
+    float: right;
+}
+.breadcrumb{
+    background-color: unset;
+}
+.badge-info, .badge-warning{
+    color: #fff;
+}
+
+.border-primary.is-invalid{
+    border-color: #FF7588 !important;
+    box-shadow: 0 0 0 0.25rem rgb(220 53 69 / 25%);
+}
