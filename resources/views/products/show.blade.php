@@ -5,13 +5,13 @@
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="content-header-left col-md-6 col-12 mb-2">
-            <h3 class="content-header-title mb-0">COUPON {{ $coupon->codice }}</h3>
+            <h3 class="content-header-title mb-0">{{ $product->codice }}</h3>
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('coupons.index') }}">COUPONS</a></li>
-                    <li class="breadcrumb-item active">COUPON N. {{ $coupon->codice }}</li>
+                    <li class="breadcrumb-item"><a href="{{ route('products.index') }}">PRODOTTI</a></li>
+                    <li class="breadcrumb-item active">{{ $product->nome }}</li>
                 </ol>
                 </div>
             </div>
@@ -30,62 +30,40 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12 text-center text-md-right">
-                            <h2>COUPON</h2>
-                            <p class="pb-3">#{{ $coupon->codice }}</p>
-                            <ul class="px-0 list-unstyled">
-                            <li class="lead text-bold-800">
-                                    @if($coupon->scontonumerico != 0 && $coupon->scontopercentuale == 0)
-                                        &euro; {{ number_format((float)$coupon->scontonumerico, 2, '.', '') }}
-                                    @elseif($coupon->scontonumerico == 0 && $coupon->scontopercentuale != 0)
-                                        {{ number_format((float)$coupon->scontopercentuale, 2, '.', '') }}%
-                                    @else
-                                        &euro; {{ number_format((float) 0, 2, '.', '') }}
-                                    @endif
-                                </li>
-                            </ul>
+                            <h2>{{ $product->nome }}</h2>
                         </div>
                     </div>
                     <div id="invoice-customer-details" class="row pt-2">
-                        <div class="col-md-6 col-sm-12 text-center text-md-left">
+                        <div class="col-md-4 col-sm-12 text-center text-md-left">
                             <ul class="px-0 list-unstyled">
-                                <li><strong>Data di partenza:</strong> {{ $coupon->datainizio }}</li>
-                                <li><strong>Data fine:</strong> {{ $coupon->datafine }}</li>
-                                <li><strong>Disponibilità:</strong> {{ $coupon->qta }}</li>
+                                <li><strong>Grammatura:</strong> {{ $product->grammatura }}</li>
+                                <li><strong>Kcal:</strong> {{ $product->kcal }}</li>
+                                <li><strong>Kcal (100g):</strong> {{ $product->kcal100gr }}</li>
+                                <li><strong>Carboidrati:</strong> {{ $product->carboidrati }}</li>
+                                <li><strong>di cui zuccheri:</strong> {{ $product->zuccheri }}</li>
+                                <li><strong>Proteine:</strong> {{ $product->proteine }}</li>
+                                <li><strong>Grassi:</strong> {{ $product->grassi }}</li>
+                                <li><strong>Grassi saturi:</strong> {{ $product->grassisaturi }}</li>
                             </ul>
                         </div>
-                        <div class="col-md-6 col-sm-12 text-center text-md-right">
-                            <ul class="px-0 list-unstyled text-center text-md-right">
-                                <li><strong>Utilizzabile da:</strong> <x-coupon-boxes box="{{ $coupon->idbox }}"></x-coupon-boxes></li>
-                                <li><strong>Multiuse:</strong> @if($coupon->multiuse == 1) Si @else No @endif</li>
-                                <li><strong>Utilizzo buono pasto:</strong> @if($coupon->buono_pasto == 1) Si @else No @endif</li>
+                        <div class="col-md-4 col-sm-12 text-center text-md-left">
+                            <ul class="px-0 list-unstyled">
+                                <li><strong>Fibre:</strong> {{ $product->fibre }}</li>
+                                <li><strong>Sodio:</strong> {{ $product->sodio }}</li>
+                                <li><strong>Sale:</strong> {{ $product->sale }}</li>
+                                <li><strong>Carico glicemico:</strong> {{ $product->caricoglicemico }}</li>
+                                <li><strong>Indice glicemico:</strong> {{ $product->indice_glicemico }}</li>
                             </ul>
                         </div>
-                    </div>
-                    <div id="orders-coupon" class="row pt-2">
-                        <table id="orders-table" class="table table-striped table-bordered multi-ordering">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Codice ordine</th>
-                                    <th>Nome</th>
-                                    <th>Cognome</th>
-                                    <th>Azioni</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($orders as $order)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $order->codice }}</td>
-                                    <td>{{ $order->nome." ".$order->cognome }}</td>
-                                    <td><x-status-order status="{{ $order->status }}"></x-status-order></td>
-                                    <td>
-                                        <a href="{{ route('orders.show', $order->id) }}"><i class="fa fa-eye mr-1" data-toggle="tooltip" data-original-title="Visualizza ordine"></i>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                        <div class="col-md-4 col-sm-12 text-center">
+                            <ul class="px-0 list-unstyled text-center text-md-left">
+                                <li><strong>Prezzo:</strong> {{ $product->prezzo }}</li>
+                                <li><strong>Stato:</strong> <x-product-status status="{{ $product->attivo }}"></x-product-status></li>
+                                <li><strong>Nuovo prodotto:</strong>  @if($product->nuovo == 1) Si @else No @endif</li>
+                                <li><strong>Shop front</strong> @if($product->shopfront == 1) Si @else No @endif</li>
+                                <li><strong>Ordine nello shop</strong> {{ $product->menu_order }}</li>
+                            </ul>
+                        </div>
                     </div>
                </div>
             </div>
