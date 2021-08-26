@@ -16,9 +16,6 @@
     rel="stylesheet">
       <link rel="stylesheet" href="{{ asset('css/app.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ asset('css/vendors.css') }}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/charts/jquery-jvectormap-2.0.3.css') }}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/charts/morris.css') }}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/extensions/unslider.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/weather-icons/climacons.min.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ asset('css/core/menu/menu-types/vertical-overlay-menu.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
@@ -87,5 +84,6 @@ data-open="click" data-menu="vertical-overlay-menu" data-col="2-columns">
   @yield('content')
 
   @include('layouts.footer')
+  @stack('scripts')
   </body>
 </html>

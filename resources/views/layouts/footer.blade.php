@@ -15,11 +15,4 @@
         <script src="{{ asset('js/scripts/customizer.js') }}" type="text/javascript"></script>
         <script src="{{ asset('vendors/js/tables/datatable/datatables.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('js/customs.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/scripts/charts/chartjs/line/line.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/scripts/charts/chartjs/line/line-area.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/scripts/charts/chartjs/line/line-logarithmic.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/scripts/charts/chartjs/line/line-multi-axis.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/scripts/charts/chartjs/line/line-skip-points.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/scripts/charts/chartjs/line/line-stacked-area.js') }}" type="text/javascript"></script>
-    </body>
-</html>
+

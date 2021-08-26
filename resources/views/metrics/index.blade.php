@@ -40,9 +40,7 @@
                     </div>
                     <div class="card-content collapse show">
                     <div class="card-body card-dashboard">
-                        <div class="card-body chartjs" style="height: 500px;"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-                            <canvas id="line-chart" height="916" width="2084" style="display: block; width: 1042px; height: 458px;" class="chartjs-render-monitor"></canvas>
-                        </div>
+                        <div id="chart" style="height: 300px;"></div>
                     </div>
                     </div>
                 </div>
@@ -58,3 +56,22 @@
 
 @endsection
 
+@push('scripts')
+    <!-- Charting library -->
+    <script src="https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <!-- Chartisan -->
+    <script src="https://unpkg.com/@chartisan/chartjs@^2.1.0/dist/chartisan_chartjs.umd.js"></script>
+    <script>
+        const chart = new Chartisan({
+          el: '#chart',
+          url: "@chart('sales_chart')",
+          hooks: new ChartisanHooks()
+            .colors(['#ECC94B'])
+            .responsive()
+            .beginAtZero()
+            .legend({ position: 'bottom' })
+            .title('Vendite')
+            .datasets([{ type: 'line', fill: false }]),
+        });
+    </script>
+@endpush
