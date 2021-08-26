@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ShippingTxtController;
 use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\MetricsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,5 @@ Route::group(['middleware' => ['adminAuth']], function() {
     Route::resource('/products', ProductsController::class);
     Route::resource('/warehouses', WarehouseController::class);
     Route::resource('/coupons', CouponController::class);
+    Route::resource('/metrics', MetricsController::class);
 });

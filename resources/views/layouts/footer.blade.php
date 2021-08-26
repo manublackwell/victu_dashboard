@@ -7,16 +7,7 @@
             </p>
         </footer>
         <script src="{{ asset('vendors/js/vendors.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('vendors/js/extensions/jquery.knob.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/scripts/extensions/knob.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('vendors/js/charts/raphael-min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('vendors/js/charts/morris.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('vendors/js/charts/jvector/jquery-jvectormap-world-mill.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('data/jvector/visitor-data.js') }}" type="text/javascript"></script>
         <script src="{{ asset('vendors/js/charts/chart.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('vendors/js/charts/jquery.sparkline.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('vendors/js/extensions/unslider-min.js') }}" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/core/colors/palette-climacon.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('fonts/simple-line-icons/style.min.css') }}">
         <script src="{{ asset('js/core/app-menu.js') }}" type="text/javascript"></script>
@@ -24,5 +15,11 @@
         <script src="{{ asset('js/scripts/customizer.js') }}" type="text/javascript"></script>
         <script src="{{ asset('vendors/js/tables/datatable/datatables.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('js/customs.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/scripts/charts/chartjs/line/line.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/scripts/charts/chartjs/line/line-area.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/scripts/charts/chartjs/line/line-logarithmic.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/scripts/charts/chartjs/line/line-multi-axis.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/scripts/charts/chartjs/line/line-skip-points.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/scripts/charts/chartjs/line/line-stacked-area.js') }}" type="text/javascript"></script>
     </body>
 </html>

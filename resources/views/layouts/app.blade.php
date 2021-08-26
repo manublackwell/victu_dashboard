@@ -71,11 +71,12 @@ data-open="click" data-menu="vertical-overlay-menu" data-col="2-columns">
                 <li class=" navigation-header">
                     <span>General</span><i class=" ft-minus" data-toggle="tooltip" data-placement="right" data-original-title="General"></i>
                 </li>
-                <li class=" nav-item"><a href="/"><i class="ft-home"></i><span class="menu-title" data-i18n="">Home</span></a></li>
-                <li class=" nav-item"><a href="{{ route('products.index') }}"><i class="ft-tag"></i><span class="menu-title" data-i18n="">Prodotti</span></a></li>
-                <li class=" nav-item"><a href="{{ route('coupons.index') }}"><i class="fa fa-barcode"></i><span class="menu-title" data-i18n="">Coupon</span></a></li>
-                <li class=" nav-item"><a href="{{ route('orders.index') }}"><i class="ft-shopping-cart"></i><span class="menu-title" data-i18n="">Ordini</span></a></li>
-                <li class=" nav-item"><a href="{{ route('warehouses.index') }}"><i class="ft-shopping-cart"></i><span class="menu-title" data-i18n="">Magazzino</span></a></li>
+                <li class="nav-item"><a href="/"><i class="ft-home"></i><span class="menu-title" data-i18n="">Home</span></a></li>
+                <li class="nav-item"><a href="{{ route('products.index') }}"><i class="ft-tag"></i><span class="menu-title">Prodotti</span></a></li>
+                <li class="nav-item"><a href="{{ route('coupons.index') }}"><i class="fa fa-barcode"></i><span class="menu-title">Coupon</span></a></li>
+                <li class="nav-item"><a href="{{ route('orders.index') }}"><i class="ft-shopping-cart"></i><span class="menu-title">Ordini</span></a></li>
+                <li class="nav-item"><a href="{{ route('warehouses.index') }}"><i class="ft-shopping-cart"></i><span class="menu-title">Magazzino</span></a></li>
+                <li class="nav-item"><a href="{{ route('metrics.index') }}"><i class="ft-trending-up"></i><span class="menu-title">Statistiche</span></a></li>
                 <!--<li class=" nav-item"><a href="/accounts/"><i class="ft-users"></i><span class="menu-title" data-i18n="">Account</span></a></li>
                 <li class=" nav-item"><a href="/agency-codes/"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Codici Aziendali</span></a></li>-->
             </ul>
