@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Product\ProductStoreRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
@@ -76,7 +77,8 @@ class ProductsController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.show', compact('product'));
+        $image = DB::table('img_prodotti')->select()->where('idProdotto', '=', $product->id)->first();
+        return view('products.show', compact('product','image'));
     }
 
     /**
